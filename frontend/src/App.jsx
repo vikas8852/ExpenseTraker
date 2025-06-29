@@ -7,13 +7,14 @@ import Signup from "./components/Signup"
 import { Toaster } from "@/components/ui/sonner"
 
 const appRouter=createBrowserRouter([
-  {
-    path:"/",
-    element:<Home/>
-  },
+
   {
     path:"/login",
     element:<Login/>
+  },
+    {
+    path:"/",
+    element:<Home/>
   },
   {
     path:"/signup",
