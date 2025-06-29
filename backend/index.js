@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(urlencoded({extended:true}));
 app.use(cookieParser());
 const corsOption={
-    origin:"http://localhost:5173",
+    origin:process.env.FORNTEND_URI,
     credentials: true,
 }
 app.use(cors(corsOption))
