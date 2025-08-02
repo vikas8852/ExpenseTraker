@@ -1,5 +1,5 @@
 import { setExpenses } from "@/redux/expenseSlice";
-import { baseUrl } from "@/Urls";
+
 import axios from "axios";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -16,7 +16,7 @@ const useGetExpenses = () => {
         //console.log(`Fetching Expenses: Category=${category}, Done=${markAsDone}`); // ✅ API Debug
 
         const res = await axios.get(
-          `${baseUrl}/api/v1/expense/getall?category=${category}&done=${markAsDone}`
+          `${import.meta.env.VITE_API_URL}/api/v1/expense/getall?category=${category}&done=${markAsDone}`
         );
 
        // console.log("🚀 API Response:", res.data); // ✅ Debug API data

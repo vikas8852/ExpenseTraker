@@ -11,7 +11,7 @@ import axios from 'axios'
 import { toast } from 'sonner'
 import { useDispatch, useSelector } from 'react-redux'
 import { setExpenses, setSingleExpense } from '@/redux/expenseSlice'
-import { baseUrl } from '@/Urls'
+
 //import { baseUrl } from '@/Urls'
 
 const UpdateExpense = ({ expense }) => {
@@ -58,7 +58,7 @@ const UpdateExpense = ({ expense }) => {
 
         try {
             setLoading(true);
-            const res = await axios.put(`${baseUrl}/api/v1/expense/update/${expense._id}`, formData, {
+            const res = await axios.put(`${import.meta.env.VITE_API_URL}/api/v1/expense/update/${expense._id}`, formData, {
                 headers: {
                     'Content-Type': 'application/json'
                 },

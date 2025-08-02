@@ -9,7 +9,7 @@ import axios from "axios";
 import { toast } from "sonner";
 import { useDispatch } from "react-redux";
 import { setAuthUser } from "@/redux/authSlice";
-import { baseUrl } from "@/Urls";
+//import { baseUrl } from "@/Urls";
 //import { baseUrl } from "@/Urls";
 
 const Login = () => {
@@ -27,7 +27,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        `${baseUrl}/api/v1/user/login`,
+        `${import.meta.env.VITE_API_URL}/api/v1/user/login`,
         input,
         {
           headers: {

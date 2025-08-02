@@ -7,7 +7,7 @@ import { Button } from "./ui/button";
 import { Link, useNavigate, } from "react-router-dom";
 import axios from "axios";
 import { toast } from "sonner";
-import { baseUrl } from "@/Urls";
+
 //import { baseUrl } from "@/Urls";
 
 const Signup = () => {
@@ -24,7 +24,7 @@ const Signup = () => {
   const submitHandler=async(e)=>{
     e.preventDefault();
     try {
-      const res = await axios.post( `${baseUrl}/api/v1/user/register`, input,
+      const res = await axios.post( `${import.meta.env.VITE_API_URL}/api/v1/user/register`, input,
         {
           headers: {
             "Content-Type": "application/json",

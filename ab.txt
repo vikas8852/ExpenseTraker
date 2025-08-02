@@ -1,0 +1,2 @@
+for fronted-- npm run dev
+backened--npm start

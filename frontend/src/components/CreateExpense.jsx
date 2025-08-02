@@ -10,7 +10,7 @@ import axios from 'axios'
 import { toast } from 'sonner'
 import { useDispatch, useSelector } from 'react-redux'
 import { setExpenses } from '@/redux/expenseSlice'
-import { baseUrl } from '@/Urls'
+
 //import { baseUrl } from '@/Urls'
 
 const CreateExpense = () => {
@@ -42,7 +42,7 @@ const submitHandler= async(e)=>{
     console.log(formData)
     try{
      setLoading(true);
-     const res=await axios.post(`${baseUrl}/api/v1/expense/add`,formData,{
+     const res=await axios.post(`${import.meta.env.VITE_API_URL}/api/v1/expense/add`,formData,{
         headers:{
             'Content-Type':'application/json'
         },
