@@ -80,7 +80,8 @@ export const login = async (req, res) => {
         .cookie('token', token, {
           maxAge: 1 * 24 * 60 * 60 * 1000, // 1 day in milliseconds
           httpOnly: true,                   // Prevent client-side JavaScript from accessing the cookie
-          sameSite: 'strict'                // Strict cookie policy
+          sameSite: 'None',          // Strict cookie policy
+           secure: true  
           // secure: process.env.NODE_ENV === 'production' // Uncomment this in production if using HTTPS
         })
         .json({
